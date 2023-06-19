@@ -1,7 +1,9 @@
-export default function BucketList() {
+import Activity from "./Activity"
+
+export default function BucketList(props) {
   return (
-    <div>
-        Hello World
-    </div>
+    props.activities.map((activity, index) => {
+      return <Activity key={index} activity={activity} />
+    })
   )
 }

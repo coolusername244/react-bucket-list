@@ -1,10 +1,14 @@
+import { useState } from 'react'
 import BucketList from './components/BucketList'
 import './App.css'
 
 function App() {
+
+  const [activities, setActivities] = useState(['activity 1', 'activity 2'])
+
   return (
     <>
-      <BucketList />
+      <BucketList activities={activities}/>
       <input type="text" />
       <button>Add Bucket List</button>
       <button>Clear Completed Activities</button>
