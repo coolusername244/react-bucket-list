@@ -1,5 +1,10 @@
-export default function Activity(props) {
+export default function Activity({ activity }) {
   return (
-    <div>{props.activity}</div>
+    <div>
+        <label>
+            <input type="checkbox" checked={activity.completed} />
+            {activity.name}
+        </label>
+    </div>
   )
 }
