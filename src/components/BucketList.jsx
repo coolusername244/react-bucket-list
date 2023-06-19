@@ -1,9 +1,9 @@
 import Activity from "./Activity"
 
-export default function BucketList(props) {
+export default function BucketList({ activities }) {
   return (
-    props.activities.map((activity, index) => {
-      return <Activity key={index} activity={activity} />
+      activities.map((activity, index) => {
+      return <Activity key={index + 1} activity={activity} />
     })
   )
 }
