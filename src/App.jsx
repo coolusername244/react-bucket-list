@@ -30,6 +30,11 @@ function App() {
     activityNameRef.current.value = null
   }
 
+  const handleClearActivities = () => {
+    const newActivities = activities.filter(activity => !activity.completed)
+    setActivities(newActivities)
+  }
+
   const count = activities.filter(activity => !activity.completed).length
 
   return (
@@ -37,7 +42,7 @@ function App() {
       <BucketList activities={activities} toggleActivity={toggleActivity}/>
       <input ref={activityNameRef} type="text" />
       <button onClick={handleAddActivity}>Add Bucket List</button>
-      <button>Clear Completed Activities</button>
+      <button onClick={handleClearActivities}>Clear Completed Activities</button>
       <div>{count} things left to do</div>
     </>
   )
