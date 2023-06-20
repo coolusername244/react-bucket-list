@@ -1,0 +1,39 @@
+.page-heading {
+    text-align: center;
+}
+
+.user-form {
+    display: flex;
+    flex-direction: column;
+    padding: 0 1em 1em;
+    margin: 1em;
+    background-color: #ffebcd;
+    border-radius: 10px;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+}
+
+.user-form__input {
+    height: 2em;
+    border-radius: 6px;
+    border-width: 1px;
+}
+
+.user-form__buttons {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 1em;
+}
+
+.user-form__button {
+    border: solid black 1px;
+    border-radius: 6px;
+    height: 2em;
+}
+
+.clear {
+    background-color: #f9c8c8;
+}
+
+.submit {
+    background-color: #c1fae7;
+}
