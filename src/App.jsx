@@ -1,14 +1,20 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import BucketList from './components/BucketList'
-import uuidv4 from 'uuid/v4'
+import {v4 as uuidv4} from 'uuid'
 import './App.css'
 
-function App() {
+const local_storage_key = 'bucketList.activities'
+const storedActivities = JSON.parse(localStorage.getItem(local_storage_key))
 
-  const [activities, setActivities] = useState([])
+function App() {
+  const [activities, setActivities] = useState(storedActivities ? storedActivities : [])
   const activityNameRef = useRef();
 
-  const handleAddActivity = e => {
+  useEffect(() => {
+    localStorage.setItem(local_storage_key, JSON.stringify(activities))
+  }, [activities]) 
+
+  const handleAddActivity = () => {
     const name = activityNameRef.current.value
     if (!name) return;
     setActivities(prev => {
