@@ -14,6 +14,13 @@ function App() {
     localStorage.setItem(local_storage_key, JSON.stringify(activities))
   }, [activities]) 
 
+  const toggleActivity = (id) => {
+    const newActivities = [...activities]
+    const activity = newActivities.find(activity => activity.id === id)
+    activity.completed = !activity.completed
+    setActivities(newActivities)
+  }
+
   const handleAddActivity = () => {
     const name = activityNameRef.current.value
     if (!name) return;
@@ -25,7 +32,7 @@ function App() {
 
   return (
     <>
-      <BucketList activities={activities}/>
+      <BucketList activities={activities} toggleActivity={toggleActivity}/>
       <input ref={activityNameRef} type="text" />
       <button onClick={handleAddActivity}>Add Bucket List</button>
       <button>Clear Completed Activities</button>
