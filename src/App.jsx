@@ -58,8 +58,10 @@ function App() {
           <button onClick={handleClearActivities} className='user-form__button clear'>Clear Completed</button>
           <button type='submit' onClick={handleAddActivity} className='user-form__button submit'>Add To Bucket List</button>
         </div>
+        <div className='remaining'>
+          {count} things left to do
+        </div>
       </form>
-      <div>{count} things left to do</div>
       <BucketList activities={activities} toggleActivity={toggleActivity}/>
     </>
   )

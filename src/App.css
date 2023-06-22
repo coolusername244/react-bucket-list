@@ -37,3 +37,8 @@
 .submit {
     background-color: #c1fae7;
 }
+
+.remaining {
+    text-align: center;
+    margin-top: 1em;
+}
